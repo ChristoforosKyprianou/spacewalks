@@ -2,6 +2,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 def read_json_to_dataframe(input_file):
+    """
+    Read the data from a JSON file into a Pandas dataframe.
+    Clean the dat by removing incomplete rows and sort date.
+    
+    Args: 
+        input_file (str): The path to the JSON file.
+        
+    Returns:
+        eva_df(pd.DataFrame): The cleaned and stored data as a dataframe structure
+        
+    """
     print(f'Reading JSON file {input_file}')
     # Read the data from a JSON file into a Pandas dataframe
     eva_df = pd.read_json(input_file, convert_dates=['date'])
@@ -13,6 +24,18 @@ def read_json_to_dataframe(input_file):
 
 
 def write_dataframe_to_csv(df, output_file):
+    """
+    Save the Pandas DataFrame into a CSV file
+    
+    Args: 
+        df (dataframe) : The dataframe that i want to save
+        output_file: The path to save the file
+        
+    Returns:
+        none
+    
+    """
+    
     print(f'Saving to CSV file {output_file}')
     # Save dataframe to CSV file for later analysis
     df.to_csv(output_file, index=False)
