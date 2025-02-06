@@ -98,8 +98,8 @@ def plot_cumulative_time_in_space(df, graph_file):
 
 print("--START--")
 
-input_file = open('./eva-data.json', 'r')
-output_file = open('./eva-data.csv', 'w')
+input_file = open('./eva-data.json', 'r',  encoding='utf-8')
+output_file = open('./eva-data.csv', 'w',  encoding='utf-8')
 graph_file = './cumulative_eva_graph.png'
 
 eva_data = read_json_to_dataframe(input_file)
